@@ -83,6 +83,7 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
+-- Custom configuration
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -227,6 +228,7 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
+require 'custom.keymaps'
 require('lazy').setup({
   { import = 'custom.plugins' },
 
@@ -256,6 +258,19 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
     },
+  },
+
+  -- tailwind-tools.lua
+  {
+    'luckasRanarison/tailwind-tools.nvim',
+    name = 'tailwind-tools',
+    build = ':UpdateRemotePlugins',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-telescope/telescope.nvim', -- optional
+      'neovim/nvim-lspconfig', -- optional
+    },
+    opts = {}, -- your configuration
   },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
