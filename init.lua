@@ -273,6 +273,19 @@ require('lazy').setup({
     opts = {}, -- your configuration
   },
 
+  -- github copilot --
+  {
+    'github/copilot.vim',
+  },
+
+  -- neorg --
+  {
+    'nvim-neorg/neorg',
+    lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+    version = '*', -- Pin Neorg to the latest stable release
+    config = true,
+  },
+
   {
     'christoomey/vim-tmux-navigator',
     cmd = {
