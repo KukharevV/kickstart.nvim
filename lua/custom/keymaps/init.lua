@@ -7,3 +7,6 @@ vim.keymap.set('n', '<leader>tt', function()
   end
   print('Switched to ' .. vim.o.background .. ' mode')
 end, { desc = 'Toggle between dark and light mode' })
+
+-- Netrw :Ex shortcut
+vim.keymap.set('n', '<leader>pr', ':Ex<CR>', { desc = 'Open netrw' })
