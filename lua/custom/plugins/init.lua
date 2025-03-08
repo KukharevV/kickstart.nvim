@@ -125,30 +125,30 @@ return {
       require('nvim-treesitter.configs').setup(opts)
     end,
   },
-  {
-    'nvim-neorg/neorg',
-    lazy = false,
-    version = '*',
-    config = function()
-      require('neorg').setup {
-        load = {
-          ['core.defaults'] = {},
-          ['core.concealer'] = {},
-          ['core.dirman'] = {
-            config = {
-              workspaces = {
-                notes = '~/notes',
-              },
-              default_workspace = 'notes',
-            },
-          },
-        },
-      }
-
-      vim.wo.foldlevel = 99
-      vim.wo.conceallevel = 2
-    end,
-  },
+  -- {
+  --   'nvim-neorg/neorg',
+  --   lazy = false,
+  --   version = '*',
+  --   config = function()
+  --     require('neorg').setup {
+  --       load = {
+  --         ['core.defaults'] = {},
+  --         ['core.concealer'] = {},
+  --         ['core.dirman'] = {
+  --           config = {
+  --             workspaces = {
+  --               notes = '~/notes',
+  --             },
+  --             default_workspace = 'notes',
+  --           },
+  --         },
+  --       },
+  --     }
+  --
+  --     vim.wo.foldlevel = 99
+  --     vim.wo.conceallevel = 2
+  --   end,
+  -- },
 
   {
     'christoomey/vim-tmux-navigator',
@@ -167,5 +167,20 @@ return {
       { '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
       { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
+  },
+
+  -- Prisma plugins
+  {
+    'prisma/vim-prisma',
+    ft = 'prisma', -- optional: lazy-load on Prisma filetypes
+  },
+  {
+    'neoclide/coc.nvim',
+    branch = 'release',
+  },
+  {
+    'pantharshit00/coc-prisma',
+    ft = 'prisma', -- Optional: load on Prisma filetypes
+    build = 'yarn install', -- or "npm install", if you prefer npm
   },
 }
